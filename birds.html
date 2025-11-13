@@ -89,7 +89,13 @@
       }
 
       nav a:hover {
-        color: #FDB515;
+        color: #fdb515;
+      }
+
+      nav a.active {
+        color: #fdb515;
+        font-weight: 700;
+        border-bottom: 3px solid #fdb515;
       }
 
       nav .search-container {
@@ -111,9 +117,9 @@
       }
 
       nav .search-button:hover {
-        background-color: #FDB515;
+        background-color: #fdb515;
         color: #003b6d;
-        border-color: #FDB515;
+        border-color: #fdb515;
       }
 
       nav .search-input {
@@ -128,7 +134,7 @@
 
       nav .search-input:focus {
         outline: none;
-        border-color: #FDB515;
+        border-color: #fdb515;
         background-color: white;
         width: 250px;
       }
@@ -147,13 +153,14 @@
 
       .coming-soon-icon {
         font-size: 8rem;
-        color: #FDB515;
+        color: #fdb515;
         margin-bottom: 2rem;
         animation: float 3s ease-in-out infinite;
       }
 
       @keyframes float {
-        0%, 100% {
+        0%,
+        100% {
           transform: translateY(0);
         }
         50% {
@@ -205,7 +212,7 @@
       }
 
       .back-home {
-        background-color: #FDB515;
+        background-color: #fdb515;
         color: #003b6d;
         padding: 1rem 2.5rem;
         border-radius: 8px;
@@ -226,13 +233,57 @@
 
       .notify-badge {
         display: inline-block;
-        background: linear-gradient(135deg, #003b6d 0%, #FDB515 100%);
+        background: linear-gradient(135deg, #003b6d 0%, #fdb515 100%);
         color: white;
-        padding: 0.5rem 1.5rem;
+        padding: 1rem 2rem;
         border-radius: 50px;
-        font-size: 0.9rem;
+        font-size: 1rem;
         font-weight: 600;
         margin-top: 2rem;
+      }
+
+      /* CTA Box */
+      .consult-cta-box {
+        background: linear-gradient(210deg, #fdb515 80%, #003b6d 80%);
+        color: white;
+        padding: 2.5rem;
+        border-radius: 15px;
+        text-align: center;
+        margin: 3rem auto;
+        max-width: 900px;
+      }
+
+      .consult-cta-box h3 {
+        color: #003b6d;
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .consult-cta-box p {
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.95;
+      }
+
+      .cta-button {
+        background-color: white;
+        color: #003b6d;
+        padding: 1rem 2.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        display: inline-block;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+        background-color: #fff8e6;
       }
 
       /* Footer */
@@ -274,11 +325,11 @@
       }
 
       .footer-section a:hover {
-        color: #FDB515;
+        color: #fdb515;
       }
 
       .footer-section ul li i {
-        color: #FDB515;
+        color: #fdb515;
         margin-right: 0.5rem;
       }
 
@@ -330,7 +381,10 @@
       <div class="header-container">
         <a href="index.html" class="logo">
           <div class="logo-icon">
-            <img src="img/logo-icon.png" alt="Paradigm Pet Professionals Logo" />
+            <img
+              src="img/logo-icon.png"
+              alt="Paradigm Pet Professionals Logo"
+            />
           </div>
           <span>Paradigm Pet Professionals</span>
         </a>
@@ -339,9 +393,16 @@
           <a href="dogs.html">Dogs</a>
           <a href="cats.html">Cats</a>
           <a href="fish.html">Fish</a>
+          <a href="birds.html" class="active">Birds</a>
+          <a href="small-animals.html">Small Animals</a>
+
           <div class="search-container">
             <button class="search-button">Fetch</button>
-            <input type="text" class="search-input" placeholder="Find something..." />
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Find something..."
+            />
           </div>
         </nav>
       </div>
@@ -354,36 +415,48 @@
       </div>
       <h1>Bird Care Guide Coming Soon!</h1>
       <p>
-        We're working hard to bring you comprehensive bird care information, including relational needs, well-being guidelines, and expert advice for keeping your feathered friends happy and healthy.
+        We're working hard to bring you comprehensive bird care information,
+        including relational needs, well-being guidelines, and expert advice for
+        keeping your feathered friends happy and healthy.
       </p>
 
       <div class="features">
         <div class="feature-card">
           <h3><i class="fa-solid fa-heart"></i> Relational Needs</h3>
-          <p>Learn about bird companionship, social interaction, and emotional well-being.</p>
+          <p>
+            Learn about bird companionship, social interaction, and emotional
+            well-being.
+          </p>
         </div>
         <div class="feature-card">
           <h3><i class="fa-solid fa-notes-medical"></i> Health & Wellness</h3>
-          <p>Identify signs of depression and illness in birds with expert guidance.</p>
+          <p>
+            Identify signs of depression and illness in birds with expert
+            guidance.
+          </p>
         </div>
         <div class="feature-card">
           <h3><i class="fa-solid fa-book"></i> Care Guidelines</h3>
-          <p>Comprehensive care instructions for various bird species and sizes.</p>
+          <p>
+            Comprehensive care instructions for various bird species and sizes.
+          </p>
         </div>
       </div>
 
       <div class="notify-badge">
         <i class="fa-solid fa-clock"></i> Coming Soon
       </div>
-
-      <p style="margin-top: 3rem; font-size: 1rem;">
-        In the meantime, our "Pexperts" are available for personalized bird care consultations.
-      </p>
-
-      <a href="index.html" class="back-home">
-        <i class="fa-solid fa-arrow-left"></i> Back to Home
-      </a>
     </section>
+
+    <!-- CTA Box -->
+    <div class="consult-cta-box">
+      <h3>Need Help on Bird Cage Cleaning?</h3>
+      <p>
+        In the meantime, our "Pexperts" are available for personalized bird care
+        consultations.!
+      </p>
+      <a href="consultation.html" class="cta-button">Schedule Consultation</a>
+    </div>
 
     <!-- Footer -->
     <footer>

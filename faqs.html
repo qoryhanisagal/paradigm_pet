@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FAQs - Paradigm Pet Professionals</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
     <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
@@ -57,6 +62,10 @@
         color: #003b6d;
       }
 
+      .logo span {
+        white-space: nowrap;
+      }
+
       .logo-icon {
         width: 40px;
         height: 40px;
@@ -75,9 +84,9 @@
 
       nav {
         display: flex;
-        gap: 2rem;
+        gap: 0.5rem;
         align-items: center;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
       }
 
       nav a {
@@ -86,51 +95,93 @@
         font-weight: 500;
         transition: color 0.3s;
         padding: 0.5rem 1rem;
+        white-space: nowrap;
       }
 
       nav a:hover {
         color: #fdb515;
       }
 
+      /* Search Trigger + Modal */
       nav .search-container {
         display: flex;
-        gap: 0.5rem;
         align-items: center;
+        margin-left: 0.5rem;
       }
 
-      nav .search-button {
-        background-color: #f5f5f5;
-        color: #003b6d;
-        padding: 0.5rem 1rem;
+      .search-trigger {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
         border: 1px solid #e0e0e0;
-        border-radius: 5px;
-        font-size: 0.9rem;
-        font-weight: 600;
+        background-color: #f5f5f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fdb515;
         cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
-      nav .search-button:hover {
+      .search-trigger:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      }
+
+      .search-modal .modal-content {
+        border-radius: 20px;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.95);
+        border: none;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        position: relative;
+      }
+
+      .search-modal .btn-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+
+      .search-modal .search-field {
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        border-radius: 999px;
+        padding: 0.25rem;
+        border: 1px solid #e0e0e0;
+      }
+
+      .search-modal input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        padding: 0.75rem 1.5rem;
+        font-size: 1.1rem;
+        color: #003b6d;
+      }
+
+      .search-modal input:focus {
+        outline: none;
+      }
+
+      .search-modal .submit-search {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: none;
+        background-color: #003b6d;
+        color: white;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+      }
+
+      .search-modal .submit-search:hover {
         background-color: #fdb515;
         color: #003b6d;
-        border-color: #fdb515;
-      }
-
-      nav .search-input {
-        padding: 0.5rem 1rem;
-        border: 1px solid #e0e0e0;
-        border-radius: 5px;
-        font-size: 0.9rem;
-        background-color: #f5f5f5;
-        width: 200px;
-        transition: width 0.3s, border-color 0.3s;
-      }
-
-      nav .search-input:focus {
-        outline: none;
-        border-color: #fdb515;
-        background-color: white;
-        width: 250px;
       }
 
       /* Hero Section */
@@ -343,12 +394,9 @@
           padding: 1.5rem;
         }
 
-        nav .search-input {
-          width: 180px;
-        }
-
-        nav .search-input:focus {
-          width: 200px;
+        nav .search-container {
+          width: 100%;
+          justify-content: flex-start;
         }
       }
     </style>
@@ -371,14 +419,20 @@
           <a href="dogs.html">Dogs</a>
           <a href="cats.html">Cats</a>
           <a href="fish.html">Fish</a>
+          <a href="birds.html">Birds</a>
+          <a href="small-animals.html">Small Animals</a>
           <a href="about-us.html">About</a>
+
           <div class="search-container">
-            <button class="search-button">Fetch</button>
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Find something..."
-            />
+            <button
+              class="search-trigger"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#globalSearchModal"
+              aria-label="Open site search"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
           </div>
         </nav>
       </div>
@@ -638,9 +692,18 @@
         <div class="footer-section">
           <h3>Contact Us</h3>
           <ul>
-            <li>=� info@paradigmpetprofessionals.com</li>
-            <li>=� (555) 123-4567</li>
-            <li>=� 123 Pet Care Lane, Rescue Bound, NY, USA</li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              info@paradigmpetprofessionals.com
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              (555) 123-4567
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              123 Pet Care Lane, Rescue Bound, NY, USA
+            </li>
           </ul>
         </div>
         <div class="footer-section">
@@ -744,5 +807,47 @@
         </p>
       </div>
     </footer>
+
+    <div
+      class="modal fade search-modal"
+      id="globalSearchModal"
+      tabindex="-1"
+      aria-labelledby="globalSearchLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close search"
+          ></button>
+          <div class="modal-body">
+            <h2 class="visually-hidden" id="globalSearchLabel">Site Search</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 1.5rem">
+              Looking for something specific? Start typing and we will fetch it.
+            </p>
+            <form class="search-form" role="search">
+              <label for="global-search-input" class="visually-hidden"
+                >Search the site</label
+              >
+              <div class="search-field">
+                <input
+                  type="text"
+                  id="global-search-input"
+                  placeholder="Search here..."
+                />
+                <button class="submit-search" type="submit" aria-label="Search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

@@ -182,7 +182,7 @@
       }
 
       .hero {
-        background: linear-gradient(135deg, #fff8e6 0%, #ffedcc 100%);
+        background: linear-gradient(135deg, #f7f9ff 0%, #e9f1ff 100%);
         padding: 4rem 2rem;
         text-align: center;
       }
@@ -253,10 +253,10 @@
         position: absolute;
         top: 0;
         left: 0;
-        right: 0;
-        height: 4px;
-        background: linear-gradient(90deg, #fdb515 0%, #003b6d 100%);
-        transform: scaleX(0);
+        bottom: 0;
+        width: 4px;
+        background: linear-gradient(180deg, #fdb515 0%, #003b6d 100%);
+        transform: scaleY(0);
         transition: transform 0.3s ease;
       }
 
@@ -267,7 +267,7 @@
       }
 
       .stat-card:hover::before {
-        transform: scaleX(1);
+        transform: scaleY(1);
       }
 
       .stat-icon {
@@ -285,7 +285,7 @@
 
       .stat-card h3 {
         font-size: 2.8rem;
-        color: #fdb515;
+        color: #003b6d;
         margin-bottom: 0.5rem;
         font-weight: 700;
         line-height: 1;
@@ -614,6 +614,20 @@
         </div>
         <h3>98%</h3>
         <p>Clients Who Recommend Our Team</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fa-solid fa-user-doctor"></i>
+        </div>
+        <h3>25+</h3>
+        <p>Certified Pet Care Experts on Staff</p>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">
+          <i class="fa-solid fa-clock"></i>
+        </div>
+        <h3>200+</h3>
+        <p>Years of Combined Experience</p>
       </div>
     </div>
 

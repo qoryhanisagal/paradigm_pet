@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fish Care - Paradigm Pet Professionals</title>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #fafafa;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: #ffffff;
+        color: #003b6d;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: #003b6d;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: #003b6d;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+        padding: 0.5rem 1rem;
+      }
+
+      nav a:hover {
+        color: #6699cc;
+      }
+
+      nav a.active {
+        color: #6699cc;
+        font-weight: 700;
+        border-bottom: 3px solid #6699cc;
+      }
+
+      nav .search-container {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      nav .search-button {
+        background-color: #f5f5f5;
+        color: #003b6d;
+        padding: 0.5rem 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      nav .search-button:hover {
+        background-color: #6699cc;
+        color: white;
+        border-color: #6699cc;
+      }
+
+      nav .search-input {
+        padding: 0.5rem 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        background-color: #f5f5f5;
+        width: 200px;
+        transition: width 0.3s, border-color 0.3s;
+      }
+
+      nav .search-input:focus {
+        outline: none;
+        border-color: #6699cc;
+        background-color: white;
+        width: 250px;
+      }
+
+      /* Breadcrumb */
+      .breadcrumb {
+        max-width: 1200px;
+        margin: 2rem auto 0;
+        padding: 0 2rem;
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .breadcrumb a {
+        color: #6699cc;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .breadcrumb a:hover {
+        color: #003b6d;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+        padding: 4rem 2rem;
+        text-align: center;
+      }
+
+      .hero-content {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .hero-icon {
+        font-size: 6rem;
+        color: #6699cc;
+        margin-bottom: 1rem;
+      }
+
+      .hero h1 {
+        font-size: 2.5rem;
+        color: #003b6d;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.8;
+      }
+
+      /* Content Section */
+      .content {
+        max-width: 900px;
+        margin: 3rem auto;
+        padding: 0 2rem;
+        background: white;
+        border-radius: 15px;
+        padding: 3rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      }
+
+      .content h2 {
+        color: #003b6d;
+        font-size: 1.8rem;
+        margin-top: 2.5rem;
+        margin-bottom: 1rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 3px solid #6699cc;
+      }
+
+      .content h2:first-of-type {
+        margin-top: 0;
+      }
+
+      .content p {
+        color: #333;
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+        font-size: 1rem;
+      }
+
+      .content ul {
+        margin: 1rem 0 1.5rem 2rem;
+      }
+
+      .content ul li {
+        color: #333;
+        margin-bottom: 0.75rem;
+        line-height: 1.6;
+      }
+
+      .content strong {
+        color: #003b6d;
+        font-weight: 600;
+      }
+
+      /* Quick Reference Table */
+      .water-params {
+        background: #f0f7ff;
+        border-left: 4px solid #6699cc;
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+        border-radius: 8px;
+      }
+
+      .water-params h3 {
+        color: #003b6d;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+      }
+
+      .water-params ul {
+        list-style: none;
+        margin: 0;
+      }
+
+      .water-params ul li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(102, 153, 204, 0.2);
+      }
+
+      .water-params ul li:last-child {
+        border-bottom: none;
+      }
+
+      /* External Links Section */
+      .resources {
+        background: #f8f9fa;
+        padding: 2rem;
+        border-radius: 10px;
+        margin-top: 2rem;
+      }
+
+      .resources h3 {
+        color: #003b6d;
+        margin-bottom: 1rem;
+      }
+
+      .resources p {
+        margin-bottom: 1rem;
+      }
+
+      .resources ul {
+        list-style: none;
+        margin: 0;
+      }
+
+      .resources ul li {
+        margin-bottom: 0.75rem;
+      }
+
+      .resources a {
+        color: #6699cc;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      .resources a:hover {
+        color: #003b6d;
+        text-decoration: underline;
+      }
+
+      /* CTA Box */
+      .consult-cta-box {
+        background: linear-gradient(135deg, #003b6d 0%, #6699cc 100%);
+        color: white;
+        padding: 2.5rem;
+        border-radius: 15px;
+        text-align: center;
+        margin: 3rem auto;
+        max-width: 900px;
+      }
+
+      .consult-cta-box h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .consult-cta-box p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.95;
+      }
+
+      .cta-button {
+        background-color: white;
+        color: #003b6d;
+        padding: 1rem 2.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1rem;
+        display: inline-block;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+        background-color: #f0f7ff;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #f8f9fa;
+        color: #003b6d;
+        padding: 4rem 2rem 2rem;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h3 {
+        color: #003b6d;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-section a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: #6699cc;
+      }
+
+      .footer-section ul li i {
+        color: #6699cc;
+        margin-right: 0.5rem;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid #e0e0e0;
+        color: #999;
+        font-size: 0.9rem;
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .header-container {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        nav {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .content {
+          padding: 2rem 1.5rem;
+        }
+
+        nav .search-input {
+          width: 180px;
+        }
+
+        nav .search-input:focus {
+          width: 200px;
+        }
+
+        .water-params {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <img src="img/logo-icon.png" alt="Paradigm Pet Professionals Logo" />
+          </div>
+          <span>Paradigm Pet Professionals</span>
+        </a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="dogs.html">Dogs</a>
+          <a href="cats.html">Cats</a>
+          <a href="fish.html" class="active">Fish</a>
+          <div class="search-container">
+            <button class="search-button">Fetch</button>
+            <input type="text" class="search-input" placeholder="Find something..." />
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="index.html">Home</a> > <span>Fish Care</span>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-icon">
+          <i class="fa-solid fa-fish"></i>
+        </div>
+        <h1>Fish Care Guide</h1>
+        <p>
+          Fish represent a broad class of aquatic animals that can live in fresh or saltwater, depending on the species. Bringing fish into your home can be an exciting hobby, especially if you intend to breed them, and the presence of a fish tank in your home can induce feelings of peace and tranquility.
+        </p>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content">
+      <p>
+        Whether you are bringing your fish home for the first time or maintaining your aquarium, it is important to test your water once per week to ensure it is free from toxins that can harm your fish.
+      </p>
+
+      <h2>Freshwater Fish</h2>
+      <p>
+        There are several freshwater fish to choose from when setting up your aquarium, but it is best to consult with a "Pexpert" to ensure your fish will get along! No matter the species, ensure your fish are suited for a freshwater environment by investing in a water testing kit. Follow these general water chemistry guidelines to ensure your fish will adapt well to your aquarium and avoid ingesting toxins that can harm or kill your fish:
+      </p>
+
+      <div class="water-params">
+        <h3>Freshwater Parameters</h3>
+        <ul>
+          <li><strong>pH Level:</strong> 6.8–7.6 (7.0 is considered neutral)</li>
+          <li><strong>Ammonia:</strong> any level above zero is harmful to fish</li>
+          <li><strong>Nitrates:</strong> 5 to 10 ppm</li>
+          <li><strong>Nitrites:</strong> less than 0.5 ppm</li>
+        </ul>
+      </div>
+
+      <h2>Saltwater Fish</h2>
+      <p>
+        Saltwater fish also offer several options when it comes to choosing among species for your aquarium. As with freshwater fish, consult with a "Pexpert" to ensure your fish will get along are suited for a saltwater environment. Following these general guidelines to avoid dangerous water conditions and ensure the appropriate salinity level for your fishies:
+      </p>
+
+      <div class="water-params">
+        <h3>Saltwater Parameters</h3>
+        <ul>
+          <li><strong>Salinity:</strong> 1.020–1.028 sg</li>
+          <li><strong>pH Level:</strong> 7.6–8.4 (7.0 is considered neutral)</li>
+          <li><strong>Ammonia:</strong> any level above 0.1 ppm requires attention</li>
+          <li><strong>Nitrates:</strong> 10 to 40 ppm</li>
+          <li><strong>Nitrites:</strong> less than 0.2 ppm</li>
+        </ul>
+      </div>
+
+      <div class="resources">
+        <h3>Additional Resources</h3>
+        <p>For more information on making your tap water safe for your fish, please visit:</p>
+        <ul>
+          <li><a href="http://www.theaquariumwiki.org/wiki/How_to_make_tap_water_safe_for_fish" target="_blank">The Aquarium Wiki - How to Make Tap Water Safe for Fish</a></li>
+          <li><a href="http://fishbase.org/home.htm" target="_blank">FishBase - Global Species Database</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA Box -->
+    <div class="consult-cta-box">
+      <h3>Need Help With Your Aquarium Setup?</h3>
+      <p>
+        Our "Pexperts" can help you choose compatible fish species and establish the perfect water chemistry for your aquarium. Get started today!
+      </p>
+      <a href="consultation.html" class="cta-button">Schedule Consultation</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>📧 info@paradigmpetprofessionals.com</li>
+            <li>📞 (555) 123-4567</li>
+            <li>📍 123 Pet Care Lane, Anytown, USA</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dogs.html">Dog Care</a></li>
+            <li><a href="cats.html">Cat Care</a></li>
+            <li><a href="fish.html">Fish Care</a></li>
+            <li><a href="consultation.html">Schedule Consultation</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Pet Adoption</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Paradigm Pet Professionals. All rights reserved. |
+          Evidence-based pet care advice for every pet lover
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

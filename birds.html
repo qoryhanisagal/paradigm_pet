@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bird Care - Paradigm Pet Professionals</title>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #fafafa;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: #ffffff;
+        color: #003b6d;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        flex-wrap: wrap;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: #003b6d;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        color: #003b6d;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+        padding: 0.5rem 1rem;
+      }
+
+      nav a:hover {
+        color: #6699cc;
+      }
+
+      nav .search-container {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      nav .search-button {
+        background-color: #f5f5f5;
+        color: #003b6d;
+        padding: 0.5rem 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      nav .search-button:hover {
+        background-color: #6699cc;
+        color: white;
+        border-color: #6699cc;
+      }
+
+      nav .search-input {
+        padding: 0.5rem 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        background-color: #f5f5f5;
+        width: 200px;
+        transition: width 0.3s, border-color 0.3s;
+      }
+
+      nav .search-input:focus {
+        outline: none;
+        border-color: #6699cc;
+        background-color: white;
+        width: 250px;
+      }
+
+      /* Coming Soon Section */
+      .coming-soon {
+        min-height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+      }
+
+      .coming-soon-icon {
+        font-size: 8rem;
+        color: #6699cc;
+        margin-bottom: 2rem;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .coming-soon h1 {
+        color: #003b6d;
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .coming-soon p {
+        color: #666;
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        max-width: 700px;
+        line-height: 1.8;
+      }
+
+      .coming-soon .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        max-width: 900px;
+        margin: 3rem 0;
+        text-align: left;
+      }
+
+      .feature-card {
+        background: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      }
+
+      .feature-card h3 {
+        color: #003b6d;
+        margin-bottom: 0.75rem;
+        font-size: 1.2rem;
+      }
+
+      .feature-card p {
+        color: #666;
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      .back-home {
+        background-color: #6699cc;
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.1rem;
+        transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+        box-shadow: 0 4px 15px rgba(102, 153, 204, 0.3);
+        display: inline-block;
+      }
+
+      .back-home:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 153, 204, 0.4);
+        background-color: #003b6d;
+      }
+
+      .notify-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #003b6d 0%, #6699cc 100%);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        margin-top: 2rem;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #f8f9fa;
+        color: #003b6d;
+        padding: 4rem 2rem 2rem;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h3 {
+        color: #003b6d;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-section a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: #6699cc;
+      }
+
+      .footer-section ul li i {
+        color: #6699cc;
+        margin-right: 0.5rem;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid #e0e0e0;
+        color: #999;
+        font-size: 0.9rem;
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .header-container {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        nav {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .coming-soon h1 {
+          font-size: 2rem;
+        }
+
+        .coming-soon-icon {
+          font-size: 5rem;
+        }
+
+        .coming-soon .features {
+          grid-template-columns: 1fr;
+        }
+
+        nav .search-input {
+          width: 180px;
+        }
+
+        nav .search-input:focus {
+          width: 200px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <img src="img/logo-icon.png" alt="Paradigm Pet Professionals Logo" />
+          </div>
+          <span>Paradigm Pet Professionals</span>
+        </a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="dogs.html">Dogs</a>
+          <a href="cats.html">Cats</a>
+          <a href="fish.html">Fish</a>
+          <div class="search-container">
+            <button class="search-button">Fetch</button>
+            <input type="text" class="search-input" placeholder="Find something..." />
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Coming Soon Section -->
+    <section class="coming-soon">
+      <div class="coming-soon-icon">
+        <i class="fa-solid fa-dove"></i>
+      </div>
+      <h1>Bird Care Guide Coming Soon!</h1>
+      <p>
+        We're working hard to bring you comprehensive bird care information, including relational needs, well-being guidelines, and expert advice for keeping your feathered friends happy and healthy.
+      </p>
+
+      <div class="features">
+        <div class="feature-card">
+          <h3><i class="fa-solid fa-heart"></i> Relational Needs</h3>
+          <p>Learn about bird companionship, social interaction, and emotional well-being.</p>
+        </div>
+        <div class="feature-card">
+          <h3><i class="fa-solid fa-notes-medical"></i> Health & Wellness</h3>
+          <p>Identify signs of depression and illness in birds with expert guidance.</p>
+        </div>
+        <div class="feature-card">
+          <h3><i class="fa-solid fa-book"></i> Care Guidelines</h3>
+          <p>Comprehensive care instructions for various bird species and sizes.</p>
+        </div>
+      </div>
+
+      <div class="notify-badge">
+        <i class="fa-solid fa-clock"></i> Coming Soon
+      </div>
+
+      <p style="margin-top: 3rem; font-size: 1rem;">
+        In the meantime, our "Pexperts" are available for personalized bird care consultations.
+      </p>
+
+      <a href="index.html" class="back-home">
+        <i class="fa-solid fa-arrow-left"></i> Back to Home
+      </a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>=ç info@paradigmpetprofessionals.com</li>
+            <li>=Þ (555) 123-4567</li>
+            <li>=Í 123 Pet Care Lane, Anytown, USA</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dogs.html">Dog Care</a></li>
+            <li><a href="cats.html">Cat Care</a></li>
+            <li><a href="fish.html">Fish Care</a></li>
+            <li><a href="consultation.html">Schedule Consultation</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Pet Adoption</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Paradigm Pet Professionals. All rights reserved. |
+          Evidence-based pet care advice for every pet lover
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

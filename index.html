@@ -154,6 +154,44 @@
         line-height: 1.8;
       }
 
+      .hero-mini-services {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 1.5rem;
+      }
+
+      .hero-mini-card {
+        background: #f7f9ff;
+        border-radius: 20px;
+        padding: 1rem 1.25rem;
+        flex: 1 1 160px;
+        min-width: 160px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      }
+
+      .hero-mini-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: #eef2ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: #fdb515;
+        margin-bottom: 0.5rem;
+      }
+
+      .hero-mini-card span {
+        font-weight: 600;
+        color: #003b6d;
+      }
+
       .hero-cta {
         background-color: #fdb515;
         color: #003b6d;
@@ -254,6 +292,10 @@
 
         .hero h1 {
           font-size: 2rem;
+        }
+
+        .hero-mini-card {
+          flex: 1 1 100%;
         }
       }
 
@@ -797,6 +839,26 @@
               "
               >FAQs</a
             >
+          </div>
+          <div class="hero-mini-services" aria-label="Quick service highlights">
+            <div class="hero-mini-card">
+              <div class="hero-mini-icon">
+                <i class="fa-solid fa-paw"></i>
+              </div>
+              <span>Vet Service</span>
+            </div>
+            <div class="hero-mini-card">
+              <div class="hero-mini-icon">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+              <span>Special Care</span>
+            </div>
+            <div class="hero-mini-card">
+              <div class="hero-mini-icon">
+                <i class="fa-solid fa-cat"></i>
+              </div>
+              <span>Adoption</span>
+            </div>
           </div>
         </div>
         <div class="hero-image">

@@ -3,13 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cat Care - Paradigm Pet Professionals</title>
-    <!-- Bootstrap CSS -->
+    <title>About Us - Paradigm Pet Professionals</title>
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     />
-    <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -31,7 +29,6 @@
         background-color: #fafafa;
       }
 
-      /* Header Styles */
       header {
         background-color: #ffffff;
         color: #003b6d;
@@ -107,7 +104,6 @@
         font-weight: 700;
       }
 
-      /* Search Trigger + Modal */
       nav .search-container {
         display: flex;
         align-items: center;
@@ -166,10 +162,6 @@
         color: #003b6d;
       }
 
-      .search-modal input:focus {
-        outline: none;
-      }
-
       .search-modal .submit-search {
         width: 56px;
         height: 56px;
@@ -189,142 +181,169 @@
         color: #003b6d;
       }
 
-      /* Hero Section */
       .hero {
-        min-height: 80vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        background: linear-gradient(135deg, #fff8e6 0%, #ffedcc 100%);
+        padding: 5rem 2rem;
         text-align: center;
-        padding: 4rem 2rem;
-        background: linear-gradient(135deg, #f7f9ff 0%, #e9f1ff 100%);
-      }
-
-      .hero-content {
-        max-width: 800px;
-        margin: 0 auto;
-      }
-
-      .hero-icon {
-        font-size: 8rem;
-        color: #fdb515;
-        margin-bottom: 2rem;
-        animation: float 3s ease-in-out infinite;
-      }
-
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-20px);
-        }
       }
 
       .hero h1 {
+        font-size: 2.5rem;
         color: #003b6d;
-        font-size: 3rem;
         margin-bottom: 1rem;
         font-weight: 700;
       }
 
       .hero p {
+        max-width: 900px;
+        margin: 0 auto;
         color: #666;
         font-size: 1.2rem;
-        margin-bottom: 2rem;
-        max-width: 700px;
-        line-height: 1.8;
       }
 
-      /* Content Section */
-      .content {
-        max-width: 900px;
+      .stats {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 1.5rem;
         margin: 3rem auto;
+        max-width: 1000px;
         padding: 0 2rem;
+      }
+
+      .stat-card {
         background: white;
         border-radius: 15px;
-        padding: 3rem;
+        padding: 2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        text-align: center;
+      }
+
+      .stat-card h3 {
+        font-size: 2.5rem;
+        color: #fdb515;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+      }
+
+      .about-section {
+        max-width: 1100px;
+        margin: 0 auto 4rem;
+        padding: 0 2rem;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .about-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2.5rem;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
       }
 
-      .content h2 {
+      .about-card h2 {
         color: #003b6d;
-        font-weight: 700;
-        font-size: 1.8rem;
-        margin-top: 2.5rem;
         margin-bottom: 1rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 3px solid #fdb515;
+        font-weight: 700;
       }
 
-      .content h2:first-of-type {
-        margin-top: 0;
+      .values-list li {
+        margin-bottom: 0.8rem;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #555;
       }
 
-      .content p {
-        color: #333;
-        margin-bottom: 1.5rem;
-        line-height: 1.8;
-        font-size: 1rem;
+      .values-list i {
+        color: #fdb515;
       }
 
-      .content ul {
-        margin: 1rem 0 1.5rem 2rem;
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        max-width: 1100px;
+        margin: 0 auto 4rem;
+        padding: 0 2rem;
       }
 
-      .content ul li {
-        color: #333;
-        margin-bottom: 0.75rem;
-        line-height: 1.6;
+      .service-card {
+        background: white;
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
       }
 
-      /* CTA Box */
-      .consult-cta-box {
-        background: linear-gradient(210deg, #fdb515 80%, #003b6d 80%);
-        color: white;
-        padding: 2.5rem;
+      .service-card i {
+        font-size: 2.5rem;
+        color: #fdb515;
+        margin-bottom: 1rem;
+      }
+
+      .service-card h3 {
+        color: #003b6d;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+
+      .team {
+        background-color: #fff;
+        padding: 4rem 2rem;
+      }
+
+      .team h2 {
+        text-align: center;
+        color: #003b6d;
+        margin-bottom: 2rem;
+        font-weight: 700;
+      }
+
+      .team-grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .team-card {
+        background: #fafafa;
+        padding: 2rem;
         border-radius: 15px;
         text-align: center;
-        margin: 3rem auto;
-        max-width: 900px;
+        border: 1px solid #eee;
       }
 
-      .consult-cta-box h3 {
-        color: #003b6d;
-        font-size: 1.8rem;
+      .team-card h3 {
+        color: #fdb515;
         margin-bottom: 1rem;
         font-weight: 700;
       }
 
-      .consult-cta-box p {
-        font-weight: 400;
-        font-size: 1.5rem;
-        margin-bottom: 1.5rem;
-        opacity: 0.95;
+      .cta-box {
+        max-width: 1000px;
+        margin: 4rem auto;
+        background: linear-gradient(135deg, #003b6d 0%, #6699cc 100%);
+        color: white;
+        padding: 3rem;
+        border-radius: 20px;
+        text-align: center;
       }
 
-      .cta-button {
-        background-color: white;
-        color: #003b6d;
-        padding: 1rem 2.5rem;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: 700;
-        font-size: 1rem;
+      .cta-box a {
         display: inline-block;
-        transition: transform 0.3s, box-shadow 0.3s;
-        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+        margin-top: 1rem;
+        padding: 0.75rem 2rem;
+        background: #fdb515;
+        color: #003b6d;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 600;
       }
 
-      .cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
-        background-color: #fff8e6;
-      }
-
-      /* Footer */
       footer {
         background-color: #f8f9fa;
         color: #003b6d;
@@ -379,7 +398,6 @@
         font-size: 0.9rem;
       }
 
-      /* Mobile Responsive */
       @media (max-width: 768px) {
         .header-container {
           flex-direction: column;
@@ -387,27 +405,16 @@
         }
 
         nav {
-          flex-direction: column;
-          gap: 1rem;
+          flex-wrap: wrap;
         }
 
         .hero h1 {
-          font-size: 2rem;
-        }
-
-        .content {
-          padding: 2rem 1.5rem;
-        }
-
-        nav .search-container {
-          width: 100%;
-          justify-content: flex-start;
+          font-size: 2.2rem;
         }
       }
     </style>
   </head>
   <body>
-    <!-- Header -->
     <header>
       <div class="header-container">
         <a href="index.html" class="logo">
@@ -422,12 +429,11 @@
         <nav>
           <a href="index.html">Home</a>
           <a href="dogs.html">Dogs</a>
-          <a href="cats.html" class="active">Cats</a>
+          <a href="cats.html">Cats</a>
           <a href="fish.html">Fish</a>
           <a href="birds.html">Birds</a>
           <a href="small-animals.html">Small Animals</a>
-          <a href="about-us.html">About</a>
-
+          <a href="about-us.html" class="active">About</a>
           <div class="search-container">
             <button
               class="search-trigger"
@@ -443,96 +449,140 @@
       </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-content">
-        <div class="hero-icon">
-          <i class="fa-solid fa-cat"></i>
-        </div>
-        <h1>Cat Care Guide</h1>
+      <p
+        class="text-uppercase"
+        style="letter-spacing: 0.2em; margin-bottom: 1rem"
+      >
+        About Paradigm Pet Professionals
+      </p>
+      <h1>Evidence-Based Pet Care Advice for Every Pet Lover</h1>
+      <p>
+        For more than twelve years, Paradigm Pet Professionals has partnered
+        with families, shelters, and veterinary teams to deliver compassionate,
+        science-backed pet care guidance.
+      </p>
+    </section>
+
+    <div class="stats">
+      <div class="stat-card">
+        <h3>12+</h3>
+        <p>Years Serving Pet Lovers</p>
+      </div>
+      <div class="stat-card">
+        <h3>4.9/5</h3>
+        <p>Average Client Support Rating</p>
+      </div>
+      <div class="stat-card">
+        <h3>3,000+</h3>
+        <p>Consultations & Presentations Delivered</p>
+      </div>
+      <div class="stat-card">
+        <h3>50+</h3>
+        <p>Certifications in Pet Health & Nutrition</p>
+      </div>
+    </div>
+
+    <div class="about-section">
+      <div class="about-card">
+        <h2>Our Mission</h2>
         <p>
-          Cats were first domesticated around 7500 BCE in the western Asia
-          region and are currently the second most popular domestic pet in the
-          United States. While there are over 60 unique documented cat breeds,
-          care and diet can differ between breeds. However, some diets and
-          practices are generally recommended for the well-being of your fluffy
-          family member regardless of breed.
+          We empower pet lovers with actionable, evidence-based insights that
+          improve the wellbeing of their furry, feathery, and scaly family
+          members. Our Pexperts bring empathy and expertise to every
+          conversation, ensuring you feel supported no matter where you are on
+          your pet care journey.
         </p>
+      </div>
+      <div class="about-card">
+        <h2>Our Brand Values</h2>
+        <ul class="values-list">
+          <li>
+            <i class="fa-solid fa-award"></i> Certified experts in pet health
+            and nutrition
+          </li>
+          <li>
+            <i class="fa-solid fa-handshake-angle"></i> Trusted by clients for
+            outstanding support
+          </li>
+          <li>
+            <i class="fa-solid fa-flask"></i> Science-backed recommendations
+            tailored to each pet
+          </li>
+          <li>
+            <i class="fa-solid fa-heart"></i> Compassionate guidance rooted in
+            respect for all animals
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fa-solid fa-comments"></i>
+        <h3>Virtual Consultations</h3>
+        <p>
+          One-on-one video sessions that deliver personalized care plans and
+          answer your pressing pet questions in real time.
+        </p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-dog"></i>
+        <h3>Individual Pet Guidance</h3>
+        <p>
+          Deep dives into nutrition, enrichment, and health routines for dogs,
+          cats, fish, birds, and small animals.
+        </p>
+      </div>
+      <div class="service-card">
+        <i class="fa-solid fa-people-group"></i>
+        <h3>Group Presentations</h3>
+        <p>
+          Custom workshops for shelters, veterinary teams, and community groups
+          seeking practical, evidence-based training.
+        </p>
+      </div>
+    </div>
+
+    <section class="team">
+      <h2>Meet Our Pexperts</h2>
+      <div class="team-grid">
+        <div class="team-card">
+          <h3>Dr. Lila Moreno</h3>
+          <p><strong>Certified Pet Nutritionist</strong></p>
+          <p>
+            Specializes in comprehensive diet plans and multi-species
+            enrichment.
+          </p>
+        </div>
+        <div class="team-card">
+          <h3>Marcus Lee</h3>
+          <p><strong>Behavior & Training Specialist</strong></p>
+          <p>
+            Helps pet parents solve behavior challenges with positive
+            reinforcement.
+          </p>
+        </div>
+        <div class="team-card">
+          <h3>Amelia Torres</h3>
+          <p><strong>Community Outreach Lead</strong>/p></p>
+          <p>
+            Designs custom group presentations for shelters and veterinary
+            partners.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="content">
-      <h2>Zero to Four Weeks</h2>
+    <div class="cta-box">
+      <h2>Ready to Partner With Paradigm Pet Professionals?</h2>
       <p>
-        It is important the queen (a term commonly used for a female cat that is
-        either pregnant or nursing) directly nurse her young if possible.
-        Monitor your kitten's growth closely to make sure its growth rate is
-        progressing steadily. If any kitten is not growing at a sufficient rate,
-        a caretaker might need to feed the kitten directly either with a bottle
-        or a feeding tube. Some reasons why kittens might not gain weight
-        appropriately include the following:
+        Schedule a consultation or invite us to present to your organization.
+        We’ll bring the science, expertise, and compassion your pets deserve.
       </p>
-      <ul>
-        <li>too many other siblings are competing for mom's milk</li>
-        <li>gastrointestinal disease</li>
-        <li>
-          environmental conditions such as extreme heat or cold, or unsanitary
-          conditions
-        </li>
-      </ul>
-
-      <h2>Four Weeks to One Year</h2>
-      <p>
-        Kittens can start being introduced to soft wet kitten food typically
-        around three to four weeks after birth. According to the
-        <a
-          href="https://www.aspca.org/pet-care/cat-care/cat-nutrition-tips"
-          target="_blank"
-          >ASPCA</a
-        >, kittens at this age should eat half to one cup of dry kitten food or
-        six to nine ounces of wet kitten food per day. If your kitten has
-        difficulties eating hard food, a small amount of water can be added to
-        soften the food. Cat food that is optimized for kittens provides the
-        additional nutrients that are needed for growth, energy, and wellness.
-        Depending on the breed, your cat may have different dietary
-        requirements. You should always consult with your veterinarian for
-        recommendations.
-      </p>
-
-      <h2>One Year to Seven Years</h2>
-      <p>
-        This age is when kittens reach the cat stage and do not need as many
-        nutrients. At this age, their level of activity decreases, and so does
-        their metabolism. It is <strong>not</strong> recommended to leave food
-        out for the cats all day. Instead, provide food a couple times a day so
-        they eat meals rather than snacking throughout the day. This practice
-        reduces the risk of obesity and other weight-related feline ailments.
-      </p>
-
-      <h2>Seven Years and More</h2>
-      <p>
-        Much like many living organisms, the body begins to deteriorate and
-        experience a lot of changes. Cats at this age should eat less fats and
-        calories and more quality proteins. This means when you are purchasing
-        packaged foods for your cat, look for food that states a particular
-        protein (such as "salmon") and <strong>not</strong> a category (such as
-        fish). This usually means they are byproducts, or combinations, of
-        lesser quality proteins.
-      </p>
-    </section>
-
-    <!-- CTA Box -->
-    <div class="consult-cta-box">
-      <h3>Need Personalized Cat Care Advice?</h3>
-      <p>
-        Our "Pexperts" can provide tailored feeding recommendations based on
-        your cat's breed, age, and dietary needs. Get expert guidance today!
-      </p>
-      <a href="consultation.html" class="cta-button">Schedule Consultation</a>
+      <a href="consultation.html">Schedule Consultation</a>
     </div>
 
-    <!-- Footer -->
     <footer>
       <div class="footer-container">
         <div class="footer-section">
@@ -548,7 +598,7 @@
             </li>
             <li>
               <i class="fa-solid fa-location-dot"></i>
-              123 Pet Care Lane, Resue Bound, NY, USA
+              123 Pet Care Lane, Anytown, USA
             </li>
           </ul>
         </div>
@@ -556,34 +606,22 @@
           <h3>Quick Links</h3>
           <ul>
             <li>
-              <a href="index.html">
-                <i class="fa-solid fa-house"></i>
-                Home
-              </a>
+              <a href="index.html"><i class="fa-solid fa-house"></i>Home</a>
             </li>
             <li>
-              <a href="dogs.html">
-                <i class="fa-solid fa-dog"></i>
-                Dog Care
-              </a>
+              <a href="dogs.html"><i class="fa-solid fa-dog"></i>Dog Care</a>
             </li>
             <li>
-              <a href="cats.html">
-                <i class="fa-solid fa-cat"></i>
-                Cat Care
-              </a>
+              <a href="cats.html"><i class="fa-solid fa-cat"></i>Cat Care</a>
             </li>
             <li>
-              <a href="fish.html">
-                <i class="fa-solid fa-fish"></i>
-                Fish Care
-              </a>
+              <a href="fish.html"><i class="fa-solid fa-fish"></i>Fish Care</a>
             </li>
             <li>
-              <a href="consultation.html">
-                <i class="fa-solid fa-calendar-check"></i>
-                Schedule Consultation
-              </a>
+              <a href="consultation.html"
+                ><i class="fa-solid fa-calendar-check"></i>Schedule
+                Consultation</a
+              >
             </li>
           </ul>
         </div>
@@ -591,28 +629,20 @@
           <h3>Resources</h3>
           <ul>
             <li>
-              <a href="#">
-                <i class="fa-solid fa-heart"></i>
-                Pet Adoption
-              </a>
+              <a href="#"><i class="fa-solid fa-heart"></i>Pet Adoption</a>
             </li>
             <li>
-              <a href="#">
-                <i class="fa-solid fa-circle-question"></i>
-                FAQs
-              </a>
+              <a href="#"><i class="fa-solid fa-circle-question"></i>FAQs</a>
             </li>
             <li>
-              <a href="#">
-                <i class="fa-solid fa-universal-access"></i>
-                Accessibility
-              </a>
+              <a href="#"
+                ><i class="fa-solid fa-universal-access"></i>Accessibility</a
+              >
             </li>
             <li>
-              <a href="#">
-                <i class="fa-solid fa-user-shield"></i>
-                Privacy Policy
-              </a>
+              <a href="#"
+                ><i class="fa-solid fa-user-shield"></i>Privacy Policy</a
+              >
             </li>
           </ul>
         </div>
@@ -620,28 +650,16 @@
           <h3>Connect With Us</h3>
           <ul>
             <li>
-              <a href="#">
-                <i class="fa-brands fa-facebook-f"></i>
-                Facebook
-              </a>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
             </li>
             <li>
-              <a href="#">
-                <i class="fa-brands fa-instagram"></i>
-                Instagram
-              </a>
+              <a href="#"><i class="fa-brands fa-instagram"></i>Instagram</a>
             </li>
             <li>
-              <a href="#">
-                <i class="fa-brands fa-x-twitter"></i>
-                Twitter
-              </a>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i>Twitter</a>
             </li>
             <li>
-              <a href="#">
-                <i class="fa-brands fa-linkedin-in"></i>
-                LinkedIn
-              </a>
+              <a href="#"><i class="fa-brands fa-linkedin-in"></i>LinkedIn</a>
             </li>
           </ul>
         </div>
@@ -654,7 +672,6 @@
       </div>
     </footer>
 
-    <!-- Search Modal -->
     <div
       class="modal fade search-modal"
       id="globalSearchModal"
@@ -695,7 +712,6 @@
       </div>
     </div>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

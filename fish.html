@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fish Care - Paradigm Pet Professionals</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
     <!-- Font Awesome Icons -->
     <link
       rel="stylesheet"
@@ -57,6 +62,10 @@
         color: #003b6d;
       }
 
+      .logo span {
+        white-space: nowrap;
+      }
+
       .logo-icon {
         width: 40px;
         height: 40px;
@@ -75,9 +84,9 @@
 
       nav {
         display: flex;
-        gap: 2rem;
+        gap: 0.5rem;
         align-items: center;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
       }
 
       nav a {
@@ -86,6 +95,7 @@
         font-weight: 500;
         transition: color 0.3s;
         padding: 0.5rem 1rem;
+        white-space: nowrap;
       }
 
       nav a:hover {
@@ -95,72 +105,93 @@
       nav a.active {
         color: #fdb515;
         font-weight: 700;
-        border-bottom: 3px solid #fdb515;
       }
 
+      /* Search Trigger + Modal */
       nav .search-container {
         display: flex;
-        gap: 0.5rem;
         align-items: center;
+        margin-left: 0.5rem;
       }
 
-      nav .search-button {
-        background-color: #f5f5f5;
-        color: #003b6d;
-        padding: 0.5rem 1rem;
+      .search-trigger {
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
         border: 1px solid #e0e0e0;
-        border-radius: 5px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background-color 0.3s, color 0.3s;
-      }
-
-      nav .search-button:hover {
-        background-color: #fdb515;
-        color: white;
-        border-color: #fdb515;
-      }
-
-      nav .search-input {
-        padding: 0.5rem 1rem;
-        border: 1px solid #e0e0e0;
-        border-radius: 5px;
-        font-size: 0.9rem;
         background-color: #f5f5f5;
-        width: 200px;
-        transition: width 0.3s, border-color 0.3s;
-      }
-
-      nav .search-input:focus {
-        outline: none;
-        border-color: #fdb515;
-        background-color: white;
-        width: 250px;
-      }
-
-      /* Breadcrumb */
-      .breadcrumb {
-        max-width: 1200px;
-        margin: 2rem auto 0;
-        padding: 0 2rem;
-        color: #666;
-        font-size: 0.9rem;
-      }
-
-      .breadcrumb a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         color: #fdb515;
-        text-decoration: none;
-        transition: color 0.3s;
+        cursor: pointer;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
 
-      .breadcrumb a:hover {
+      .search-trigger:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+      }
+
+      .search-modal .modal-content {
+        border-radius: 20px;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.95);
+        border: none;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        position: relative;
+      }
+
+      .search-modal .btn-close {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+
+      .search-modal .search-field {
+        display: flex;
+        align-items: center;
+        background: #ffffff;
+        border-radius: 999px;
+        padding: 0.25rem;
+        border: 1px solid #e0e0e0;
+      }
+
+      .search-modal input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        padding: 0.75rem 1.5rem;
+        font-size: 1.1rem;
+        color: #003b6d;
+      }
+
+      .search-modal input:focus {
+        outline: none;
+      }
+
+      .search-modal .submit-search {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        border: none;
+        background-color: #003b6d;
+        color: white;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s;
+      }
+
+      .search-modal .submit-search:hover {
+        background-color: #fdb515;
         color: #003b6d;
       }
 
       /* Hero Section */
       .hero {
-        background: linear-gradient(135deg, #fff8e6 0%, #ffedcc 100%);
+        background: linear-gradient(135deg, #f7f9ff 0%, #e9f1ff 100%);
         padding: 4rem 2rem;
         text-align: center;
       }
@@ -174,6 +205,7 @@
         font-size: 6rem;
         color: #fdb515;
         margin-bottom: 1rem;
+        animation: float 3s ease-in-out infinite;
       }
 
       .hero h1 {
@@ -189,6 +221,17 @@
         line-height: 1.8;
       }
 
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+
       /* Content Section */
       .content {
         max-width: 900px;
@@ -202,6 +245,7 @@
 
       .content h2 {
         color: #003b6d;
+        font-weight: 700;
         font-size: 1.8rem;
         margin-top: 2.5rem;
         margin-bottom: 1rem;
@@ -248,6 +292,7 @@
         color: #003b6d;
         margin-bottom: 1rem;
         font-size: 1.3rem;
+        font-weight: 700;
       }
 
       .water-params ul {
@@ -275,6 +320,7 @@
       .resources h3 {
         color: #003b6d;
         margin-bottom: 1rem;
+        font-weight: 700;
       }
 
       .resources p {
@@ -421,12 +467,9 @@
           padding: 2rem 1.5rem;
         }
 
-        nav .search-input {
-          width: 180px;
-        }
-
-        nav .search-input:focus {
-          width: 200px;
+        nav .search-container {
+          width: 100%;
+          justify-content: flex-start;
         }
 
         .water-params {
@@ -455,23 +498,22 @@
           <a href="fish.html" class="active">Fish</a>
           <a href="birds.html">Birds</a>
           <a href="small-animals.html">Small Animals</a>
+          <a href="about-us.html">About</a>
 
           <div class="search-container">
-            <button class="search-button">Fetch</button>
-            <input
-              type="text"
-              class="search-input"
-              placeholder="Find something..."
-            />
+            <button
+              class="search-trigger"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#globalSearchModal"
+              aria-label="Open site search"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
           </div>
         </nav>
       </div>
     </header>
-
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-      <a href="index.html">Home</a> > <span>Fish Care</span>
-    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -494,8 +536,9 @@
     <section class="content">
       <p>
         Whether you are bringing your fish home for the first time or
-        maintaining your aquarium, it is important to test your water once per
-        week to ensure it is free from toxins that can harm your fish.
+        maintaining your aquarium, it is important to test your water
+        <strong>once per week</strong> to ensure it is free from toxins that can
+        harm your fish.
       </p>
 
       <h2>Freshwater Fish</h2>
@@ -586,37 +629,111 @@
         <div class="footer-section">
           <h3>Contact Us</h3>
           <ul>
-            <li>📧 info@paradigmpetprofessionals.com</li>
-            <li>📞 (555) 123-4567</li>
-            <li>📍 123 Pet Care Lane, Anytown, USA</li>
+            <li>
+              <i class="fa-solid fa-envelope"></i>
+              info@paradigmpetprofessionals.com
+            </li>
+            <li>
+              <i class="fa-solid fa-phone"></i>
+              (555) 123-4567
+            </li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>
+              123 Pet Care Lane, Resue Bound, NY, USA
+            </li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dogs.html">Dog Care</a></li>
-            <li><a href="cats.html">Cat Care</a></li>
-            <li><a href="fish.html">Fish Care</a></li>
-            <li><a href="consultation.html">Schedule Consultation</a></li>
+            <li>
+              <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="dogs.html">
+                <i class="fa-solid fa-dog"></i>
+                Dog Care
+              </a>
+            </li>
+            <li>
+              <a href="cats.html">
+                <i class="fa-solid fa-cat"></i>
+                Cat Care
+              </a>
+            </li>
+            <li>
+              <a href="fish.html">
+                <i class="fa-solid fa-fish"></i>
+                Fish Care
+              </a>
+            </li>
+            <li>
+              <a href="consultation.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                Schedule Consultation
+              </a>
+            </li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Resources</h3>
           <ul>
-            <li><a href="#">Pet Adoption</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Accessibility</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-heart"></i>
+                Pet Adoption
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-circle-question"></i>
+                FAQs
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-universal-access"></i>
+                Accessibility
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-user-shield"></i>
+                Privacy Policy
+              </a>
+            </li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Connect With Us</h3>
           <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">LinkedIn</a></li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-x-twitter"></i>
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+                LinkedIn
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -627,5 +744,49 @@
         </p>
       </div>
     </footer>
+
+    <!-- Search Modal -->
+    <div
+      class="modal fade search-modal"
+      id="globalSearchModal"
+      tabindex="-1"
+      aria-labelledby="globalSearchLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close search"
+          ></button>
+          <div class="modal-body">
+            <h2 class="visually-hidden" id="globalSearchLabel">Site Search</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 1.5rem">
+              Looking for something specific? Start typing and we will fetch it.
+            </p>
+            <form class="search-form" role="search">
+              <label for="global-search-input" class="visually-hidden"
+                >Search the site</label
+              >
+              <div class="search-field">
+                <input
+                  type="text"
+                  id="global-search-input"
+                  placeholder="Search here..."
+                />
+                <button class="submit-search" type="submit" aria-label="Search">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

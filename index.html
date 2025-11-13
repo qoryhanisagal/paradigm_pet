@@ -350,6 +350,27 @@
         .hero-mini-card {
           flex: 1 1 100%;
         }
+
+        .hero-cta-group {
+          flex-wrap: wrap;
+          width: 100%;
+        }
+
+        .hero-cta {
+          flex: 1 1 100%;
+        }
+
+        .gallery-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          grid-auto-rows: 140px;
+        }
+
+        .gallery-item.tall,
+        .gallery-item.wide,
+        .gallery-item.medium {
+          grid-column: span 2;
+          grid-row: span 2;
+        }
       }
 
       /* Search Trigger + Modal */
@@ -695,16 +716,85 @@
 
       .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
         gap: 1.25rem;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-auto-rows: 150px;
       }
 
-      .gallery-grid img {
+      .gallery-item {
+        position: relative;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 25px 45px rgba(0, 0, 0, 0.08);
+      }
+
+      .gallery-item img {
         width: 100%;
-        border-radius: 20px;
+        height: 100%;
         object-fit: cover;
-        height: 280px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        display: block;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      .gallery-item.tall {
+        grid-row: span 4;
+      }
+
+      .gallery-item.medium {
+        grid-row: span 2;
+        position: relative;
+        overflow: hidden;
+        height: 20rem;
+        border-radius: 1rem;
+      }
+      .gallery-item.medium img.bird-img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        object-position: 40% 20%;
+        transition: object-position 0.25s ease;
+      }
+
+      .gallery-item.medium img.bird-img:hover {
+        object-position: 10% 15%;
+      }
+
+      .gallery-item.wide {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      .gallery-item.highlight {
+        border: 2px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .gallery-item.highlight::before {
+        content: '';
+        position: absolute;
+        inset: 1.5rem;
+        border: 2px solid rgba(255, 255, 255, 0.65);
+        border-radius: 18px;
+      }
+
+      .gallery-overlay {
+        position: absolute;
+        bottom: 1.2rem;
+        left: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        color: #003b6d;
+        padding: 0.35rem 0.9rem;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+
+      .gallery-overlay i {
+        color: #f26a21;
       }
 
       .submit-button {
@@ -1138,11 +1228,31 @@
         </p>
       </div>
       <div class="gallery-grid">
-        <img src="img/cat-1.jpg" alt="Gray and white cat sitting" />
-        <img src="img/pup-1.jpg" alt="Dog running in a field" />
-        <img src="img/pup-2.jpg" alt="Dog being groomed" />
-        <img src="img/pup-3.jpg" alt="Puppy enjoying a bath" />
-        <img src="img/cat-2.jpg" alt="White kitten resting" />
+        <div class="gallery-item tall">
+          <img src="img/cat-1.jpg" alt="Gray and white cat sitting" />
+        </div>
+        <div class="gallery-item medium">
+          <img src="img/fish-2.jpg" alt="Dog smiling in a meadow" />
+        </div>
+        <div class="gallery-item medium">
+          <img
+            class="bird-img"
+            src="img/bird-1.jpg"
+            alt="Colorful bird on perch"
+          />
+        </div>
+        <div class="gallery-item highlight medium">
+          <img src="img/pet-shower.png" alt="Dog enjoying a bath" />
+          <span class="gallery-overlay">
+            Pet shower <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </span>
+        </div>
+        <div class="gallery-item wide">
+          <img src="img/cat-2.jpg" alt="Cat on stairs" />
+        </div>
+        <div class="gallery-item medium">
+          <img src="img/snake-2.jpg" alt="Snake on bed" />
+        </div>
       </div>
     </section>
 
@@ -1193,7 +1303,7 @@
               <option value="cat">Cat</option>
               <option value="fish">Fish</option>
               <option value="bird">Bird</option>
-              <option value="other">Other</option>
+              <option value="small animals">Small Animals</option>
             </select>
           </div>
           <div class="form-group">

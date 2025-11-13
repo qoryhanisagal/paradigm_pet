@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paradigm Pet Professionals - Home</title>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #ffffff;
+      }
+
+      /* Header Styles */
+      header {
+        background-color: #ffffff;
+        color: #003b6d;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      }
+
+      .header-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        color: #003b6d;
+      }
+
+      .logo-icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      nav {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      nav a {
+        color: #003b6d;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+        padding: 0.5rem 1rem;
+      }
+
+      nav a:hover {
+        color: #6699cc;
+      }
+
+      .cta-button {
+        background-color: #6699cc;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.3s;
+      }
+
+      .cta-button:hover {
+        background-color: #003b6d;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: #ffffff;
+        color: #003b6d;
+        padding: 5rem 2rem;
+      }
+
+      .hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .hero-text {
+        text-align: left;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        font-weight: 700;
+        color: #003b6d;
+      }
+
+      .hero h1 .highlight {
+        color: #6699cc;
+      }
+
+      .hero p {
+        font-size: 1.1rem;
+        margin-bottom: 2rem;
+        color: #666;
+        line-height: 1.8;
+      }
+
+      .hero-cta {
+        background-color: #6699cc;
+        color: white;
+        padding: 1rem 2.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        display: inline-block;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 15px rgba(102, 153, 204, 0.3);
+      }
+
+      .hero-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(102, 153, 204, 0.4);
+        background-color: #003b6d;
+      }
+
+      .hero-image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .hero-image-bg {
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        background-color: #6699cc;
+        border-radius: 20px;
+        z-index: 0;
+      }
+
+      .hero-image img {
+        position: relative;
+        z-index: 1;
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      @media (max-width: 768px) {
+        .hero-content {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .hero h1 {
+          font-size: 2rem;
+        }
+      }
+
+      /* Search Bar in Navigation */
+      nav .search-container {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+      }
+
+      nav .search-button {
+        background-color: #f5f5f5;
+        color: #003b6d;
+        padding: 0.5rem 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      nav .search-button:hover {
+        background-color: #6699cc;
+        color: white;
+        border-color: #6699cc;
+      }
+
+      nav .search-input {
+        padding: 0.5rem 1rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        background-color: #f5f5f5;
+        width: 200px;
+        transition: width 0.3s, border-color 0.3s;
+      }
+
+      nav .search-input:focus {
+        outline: none;
+        border-color: #6699cc;
+        background-color: white;
+        width: 250px;
+      }
+
+      /* Services Section */
+      .services {
+        max-width: 1200px;
+        margin: 5rem auto;
+        padding: 0 2rem;
+      }
+
+      .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #003b6d;
+        margin-bottom: 3rem;
+        font-weight: 700;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: #ffffff;
+        padding: 2.5rem;
+        border-radius: 15px;
+        border: 1px solid #f0f0f0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .service-icon {
+        width: 80px;
+        height: 80px;
+        background-color: #f0f7ff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        font-size: 2rem;
+        color: #6699cc;
+      }
+
+      .service-card h3 {
+        color: #003b6d;
+        margin-bottom: 1rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      .service-card p {
+        color: #666;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .learn-more {
+        color: #6699cc;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s;
+      }
+
+      .learn-more:hover {
+        color: #003b6d;
+      }
+
+      /* Pet Care Resources */
+      .pet-resources {
+        background-color: #fafafa;
+        padding: 5rem 2rem;
+      }
+
+      .resources-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .pet-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .pet-card {
+        background: #ffffff;
+        border-radius: 15px;
+        overflow: hidden;
+        border: 1px solid #f0f0f0;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .pet-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      }
+
+      .pet-image {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(135deg, #f0f7ff 0%, #e6f2ff 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 4rem;
+        color: #6699cc;
+      }
+
+      .pet-card-content {
+        padding: 2rem;
+        text-align: center;
+      }
+
+      .pet-card h3 {
+        color: #003b6d;
+        margin-bottom: 0.75rem;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      .pet-card p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .explore-button {
+        background-color: #6699cc;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        text-decoration: none;
+        display: inline-block;
+        margin-top: 1rem;
+        font-weight: 600;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 15px rgba(102, 153, 204, 0.2);
+      }
+
+      .explore-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 153, 204, 0.3);
+        background-color: #003b6d;
+      }
+
+      .coming-soon {
+        opacity: 0.6;
+      }
+
+      .coming-soon .explore-button {
+        background-color: #ccc;
+        box-shadow: none;
+        cursor: not-allowed;
+      }
+
+      .coming-soon .explore-button:hover {
+        transform: none;
+        box-shadow: none;
+      }
+
+      /* Quick Consultation Form */
+      .quick-consult {
+        max-width: 800px;
+        margin: 5rem auto;
+        padding: 3rem;
+        background: white;
+        border-radius: 15px;
+        border: 1px solid #f0f0f0;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+      }
+
+      .quick-consult h2 {
+        color: #003b6d;
+        text-align: center;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        font-weight: 700;
+      }
+
+      .quick-consult > p {
+        text-align: center;
+        color: #666;
+        margin-bottom: 2rem;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 1rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .form-group label {
+        color: #003b6d;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .form-group input,
+      .form-group select {
+        padding: 0.875rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+        background-color: #fafafa;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: #6699cc;
+        background-color: white;
+      }
+
+      .submit-button {
+        background-color: #6699cc;
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 1rem;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 15px rgba(102, 153, 204, 0.3);
+      }
+
+      .submit-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(102, 153, 204, 0.4);
+        background-color: #003b6d;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #f8f9fa;
+        color: #003b6d;
+        padding: 4rem 2rem 2rem;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h3 {
+        color: #003b6d;
+        margin-bottom: 1rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin-bottom: 0.75rem;
+      }
+
+      .footer-section a {
+        color: #666;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: #6699cc;
+      }
+
+      .footer-section ul li i {
+        color: #6699cc;
+        margin-right: 0.5rem;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 2rem;
+        border-top: 1px solid #e0e0e0;
+        color: #999;
+        font-size: 0.9rem;
+      }
+
+      /* Breadcrumb */
+      .breadcrumb {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+        color: #666;
+      }
+
+      .breadcrumb a {
+        color: #6699cc;
+        text-decoration: none;
+      }
+
+      /* Content Page Styles */
+      .content-page {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+        background: white;
+        border-radius: 10px;
+        padding: 3rem;
+      }
+
+      .content-page h1 {
+        color: #003b6d;
+        margin-bottom: 2rem;
+      }
+
+      .content-page h2 {
+        color: #003b6d;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid #6699cc;
+        padding-bottom: 0.5rem;
+      }
+
+      .content-page h3 {
+        color: #6699cc;
+        margin-top: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .content-page ul {
+        margin-left: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .content-page li {
+        margin-bottom: 0.5rem;
+      }
+
+      .content-image {
+        width: 100%;
+        height: 300px;
+        background: linear-gradient(135deg, #6699cc 0%, #003b6d 100%);
+        border-radius: 10px;
+        margin: 2rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5rem;
+      }
+
+      .consult-cta-box {
+        background: linear-gradient(135deg, #003b6d 0%, #6699cc 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        margin: 3rem 0;
+      }
+
+      .consult-cta-box h3 {
+        margin-bottom: 1rem;
+      }
+
+      .consult-cta-box .cta-button {
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="header-container">
+        <a href="index.html" class="logo">
+          <div class="logo-icon">
+            <img
+              src="img/logo-icon.png"
+              alt="Paradigm Pet Professionals Logo"
+            />
+          </div>
+          <span>Paradigm Pet Professionals</span>
+        </a>
+        <!-- Navigation Bar-->
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="dogs.html">Dogs</a>
+          <a href="cats.html">Cats</a>
+          <a href="fish.html">Fish</a>
+          <div class="search-container">
+            <button class="search-button">Fetch</button>
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Find something..."
+            />
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Evidence-Based Pet Care Advice for <span class="highlight">Every Pet Lover</span></h1>
+          <p>
+            Pets are nature's gift to humanity. It has been scientifically proven that opening our homes and hearts to a pet increases our longevity and improves our overall quality of life as well as the lives of our pets. At Paradigm Pet Professionals, our mission is to offer resources to help you care for your furry, scaly, feathery, and slimy loved ones. Our pet experts—or "Pexperts"—have been working with pet owners and professionals alike for the past twelve years. They offer one-on-one consultations with current and prospective pet owners as well as group presentations designed for veterinary, pet shelter, and pet breeding professionals.
+          </p>
+          <a href="consultation.html" class="hero-cta">Schedule Consultation</a>
+        </div>
+        <div class="hero-image">
+          <div class="hero-image-bg"></div>
+          <img src="img/logo-icon.png" alt="Happy pets" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <h2 class="section-title">Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-user-group"></i></div>
+          <h3>One-on-One Consultations</h3>
+          <p>
+            Personalized pet care advice tailored to your pet's unique needs
+            with our certified experts.
+          </p>
+          <a href="consultation.html" class="learn-more">Schedule Now →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <h3>Group Presentations</h3>
+          <p>
+            Professional presentations designed for veterinary, pet shelter, and
+            breeding professionals.
+          </p>
+          <a href="consultation.html" class="learn-more">Learn More →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-laptop-medical"></i></div>
+          <h3>Virtual Care</h3>
+          <p>
+            State-of-the-art virtual consultations bringing expert pet care
+            advice to your home.
+          </p>
+          <a href="consultation.html" class="learn-more">Get Started →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pet Care Information Section -->
+    <section class="pet-resources">
+      <div class="resources-container">
+        <h2 class="section-title">Looking for Basic Pet Care Advice?</h2>
+        <p style="text-align: center; color: #666; max-width: 800px; margin: 0 auto 2rem;">
+          Looking for basic pet care advice for the most common type of pets? Need additional help determining which type of pet is right for you and your family? We will work with you and provide tailored evidence-based pet care to ensure lifelong health and wellness of your new companion.
+        </p>
+        <div class="pet-grid">
+          <div class="pet-card">
+            <!-- Dog Icon -->
+            <div class="pet-image"><i class="fa-solid fa-dog"></i></div>
+            <div class="pet-card-content">
+              <h3>Dog Care</h3>
+              <p>
+                Expert advice on diet, exercise, grooming, and keeping your dog
+                healthy and happy throughout their life.
+              </p>
+              <a href="dogs.html" class="explore-button">Explore Dog Care</a>
+            </div>
+          </div>
+          <div class="pet-card">
+            <!-- Cat Icon -->
+            <div class="pet-image"><i class="fa-solid fa-cat"></i></div>
+            <div class="pet-card-content">
+              <h3>Cat Care</h3>
+              <p>
+                Comprehensive feeding guides for all life stages, from kittens
+                to senior cats based on breed and preferences.
+              </p>
+              <a href="cats.html" class="explore-button">Explore Cat Care</a>
+            </div>
+          </div>
+          <div class="pet-card">
+            <div class="pet-image"><i class="fa-solid fa-fish"></i></div>
+            <div class="pet-card-content">
+              <h3>Fish Care</h3>
+              <p>
+                Essential water testing and maintenance guidelines for
+                freshwater and saltwater aquarium environments.
+              </p>
+              <a href="fish.html" class="explore-button">Explore Fish Care</a>
+            </div>
+          </div>
+          <div class="pet-card coming-soon">
+            <div class="pet-image"><i class="fa-solid fa-dove"></i></div>
+            <div class="pet-card-content">
+              <h3>Bird Care</h3>
+              <p>Coming Soon! Bird relational needs and well-being resources.</p>
+              <a href="birds.html" class="explore-button" style="opacity: 0.5"
+                >Coming Soon</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Adoption Resources Section -->
+    <section class="services" style="background-color: #f8f9fa; padding: 5rem 2rem;">
+      <h2 class="section-title">Looking for Your New Best Friend?</h2>
+      <p style="text-align: center; color: #666; max-width: 800px; margin: 0 auto 3rem;">
+        The following organizations can help you find and adopt the perfect companion:
+      </p>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-paw"></i></div>
+          <h3>General Pet Adoption</h3>
+          <p>
+            Find your perfect companion through The Shelter Pet Project's nationwide adoption resources.
+          </p>
+          <a href="https://theshelterpetproject.org/" target="_blank" class="learn-more">Visit Site →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-heart"></i></div>
+          <h3>ASPCA</h3>
+          <p>
+            Connect with the American Society for the Prevention of Cruelty to Animals for adoptable pets.
+          </p>
+          <a href="https://www.aspca.org/" target="_blank" class="learn-more">Visit Site →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-fish"></i></div>
+          <h3>Fish Rescue</h3>
+          <p>
+            Specialized koi fish rescue and adoption services for aquatic pet lovers.
+          </p>
+          <a href="https://www.sterlingshelter.org/humane-society/koi-fish-rescue/" target="_blank" class="learn-more">Visit Site →</a>
+        </div>
+      </div>
+      <div class="services-grid" style="margin-top: 2rem;">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-snake"></i></div>
+          <h3>Snake Rescue</h3>
+          <p>
+            Find reptile rescue services and adoption opportunities for snake enthusiasts.
+          </p>
+          <a href="https://savethesnakes.org/snakerescuecall/" target="_blank" class="learn-more">Visit Site →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-dove"></i></div>
+          <h3>Bird Rescue</h3>
+          <p>
+            Connect with bird rescue organizations to find your feathered friend.
+          </p>
+          <a href="https://ftlob.rescuegroups.org/" target="_blank" class="learn-more">Visit Site →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fa-solid fa-hands-helping"></i></div>
+          <h3>Adoption Guidance</h3>
+          <p>
+            We're happy to help you navigate the adoption process from start to finish!
+          </p>
+          <a href="consultation.html" class="learn-more">Schedule Consultation →</a>
+        </div>
+      </div>
+      <p style="text-align: center; color: #666; max-width: 900px; margin: 3rem auto 0; font-style: italic;">
+        We are also happy to help you navigate the adoption process! We will guide you through each step in the process from determining which type of pet is best suited for your family and home environment, to completing the necessary paperwork, to bringing your new loved one home. Please fill out our contact form to request a consultation. We will contact you within 48 hours to schedule a consultation. All fields are required.
+      </p>
+    </section>
+
+    <!-- Quick Consultation Form -->
+    <section class="quick-consult">
+      <h2>Need Expert Advice?</h2>
+      <p style="text-align: center; color: #666; margin-bottom: 2rem">
+        Fill out our quick consultation request form and we'll contact you
+        within 48 hours.
+      </p>
+      <form>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" required />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" required />
+          </div>
+          <div class="form-group">
+            <label for="timezone">Time Zone *</label>
+            <select id="timezone" required>
+              <option value="">Select Time Zone</option>
+              <option value="EST">Eastern (EST)</option>
+              <option value="CST">Central (CST)</option>
+              <option value="MST">Mountain (MST)</option>
+              <option value="PST">Pacific (PST)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="pet-name">Pet's Name *</label>
+            <input type="text" id="pet-name" required />
+          </div>
+          <div class="form-group">
+            <label for="pet-type">Pet Type *</label>
+            <select id="pet-type" required>
+              <option value="">Select Pet Type</option>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+              <option value="fish">Fish</option>
+              <option value="bird">Bird</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pet-age">Pet's Age *</label>
+            <input
+              type="text"
+              id="pet-age"
+              placeholder="e.g., 2 years"
+              required
+            />
+          </div>
+        </div>
+        <button type="submit" class="submit-button">Submit Request</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>📧 info@paradigmpetprofessionals.com</li>
+            <li>📞 (555) 123-4567</li>
+            <li>📍 123 Pet Care Lane, Anytown, USA</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dogs.html">Dog Care</a></li>
+            <li><a href="cats.html">Cat Care</a></li>
+            <li><a href="fish.html">Fish Care</a></li>
+            <li><a href="consultation.html">Schedule Consultation</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Resources</h3>
+          <ul>
+            <li><a href="#">Pet Adoption</a></li>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Accessibility</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h3>Connect With Us</h3>
+          <ul>
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Paradigm Pet Professionals. All rights reserved. |
+          Evidence-based pet care advice for every pet lover
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

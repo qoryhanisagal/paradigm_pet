@@ -89,7 +89,7 @@
       }
 
       nav a:hover {
-        color: #FDB515;
+        color: #fdb515;
       }
 
       nav .search-container {
@@ -111,9 +111,9 @@
       }
 
       nav .search-button:hover {
-        background-color: #FDB515;
+        background-color: #fdb515;
         color: white;
-        border-color: #FDB515;
+        border-color: #fdb515;
       }
 
       nav .search-input {
@@ -128,28 +128,9 @@
 
       nav .search-input:focus {
         outline: none;
-        border-color: #FDB515;
+        border-color: #fdb515;
         background-color: white;
         width: 250px;
-      }
-
-      /* Breadcrumb */
-      .breadcrumb {
-        max-width: 1200px;
-        margin: 2rem auto 0;
-        padding: 0 2rem;
-        color: #666;
-        font-size: 0.9rem;
-      }
-
-      .breadcrumb a {
-        color: #FDB515;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .breadcrumb a:hover {
-        color: #003b6d;
       }
 
       /* Hero Section */
@@ -166,7 +147,7 @@
 
       .hero-icon {
         font-size: 6rem;
-        color: #FDB515;
+        color: #fdb515;
         margin-bottom: 1rem;
       }
 
@@ -248,7 +229,7 @@
       .form-group input:focus,
       .form-group select:focus {
         outline: none;
-        border-color: #FDB515;
+        border-color: #fdb515;
         background-color: white;
         box-shadow: 0 0 0 3px rgba(102, 153, 204, 0.1);
       }
@@ -258,7 +239,7 @@
       }
 
       .submit-button {
-        background-color: #FDB515;
+        background-color: #fdb515;
         color: white;
         padding: 1rem 2rem;
         border: none;
@@ -294,7 +275,7 @@
       /* Info Box */
       .info-box {
         background: #fff8e6;
-        border-left: 4px solid #FDB515;
+        border-left: 4px solid #fdb515;
         padding: 1.5rem;
         margin-bottom: 2rem;
         border-radius: 8px;
@@ -319,10 +300,10 @@
       }
 
       .info-box ul li:before {
-        content: "✓";
+        content: '✓';
         position: absolute;
         left: 0;
-        color: #FDB515;
+        color: #fdb515;
         font-weight: bold;
       }
 
@@ -365,11 +346,11 @@
       }
 
       .footer-section a:hover {
-        color: #FDB515;
+        color: #fdb515;
       }
 
       .footer-section ul li i {
-        color: #FDB515;
+        color: #fdb515;
         margin-right: 0.5rem;
       }
 
@@ -421,7 +402,10 @@
       <div class="header-container">
         <a href="index.html" class="logo">
           <div class="logo-icon">
-            <img src="img/logo-icon.png" alt="Paradigm Pet Professionals Logo" />
+            <img
+              src="img/logo-icon.png"
+              alt="Paradigm Pet Professionals Logo"
+            />
           </div>
           <span>Paradigm Pet Professionals</span>
         </a>
@@ -430,18 +414,18 @@
           <a href="dogs.html">Dogs</a>
           <a href="cats.html">Cats</a>
           <a href="fish.html">Fish</a>
+          <a href="about-us.html">About</a>
           <div class="search-container">
             <button class="search-button">Fetch</button>
-            <input type="text" class="search-input" placeholder="Find something..." />
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Find something..."
+            />
           </div>
         </nav>
       </div>
     </header>
-
-    <!-- Breadcrumb -->
-    <div class="breadcrumb">
-      <a href="index.html">Home</a> > <span>Schedule Consultation</span>
-    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -451,7 +435,9 @@
         </div>
         <h1>Schedule Your Consultation</h1>
         <p>
-          Get personalized, evidence-based pet care advice from our certified "Pexperts". We're here to help you and your companion live a healthier, happier life together.
+          Get personalized, evidence-based pet care advice from our certified
+          "Pexperts". We're here to help you and your companion live a
+          healthier, happier life together.
         </p>
       </div>
     </section>
@@ -460,7 +446,8 @@
     <section class="form-container">
       <h2>Request a Consultation</h2>
       <p class="form-intro">
-        Fill out the form below and we'll contact you within 48 hours to schedule your consultation. All fields are required.
+        Fill out the form below and we'll contact you within 48 hours to
+        schedule your consultation. All fields are required.
       </p>
 
       <div class="info-box">
@@ -487,7 +474,9 @@
             />
           </div>
           <div class="form-group">
-            <label for="phone">Phone Number <span class="required">*</span></label>
+            <label for="phone"
+              >Phone Number <span class="required">*</span></label
+            >
             <input
               type="tel"
               id="phone"
@@ -500,7 +489,9 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label for="email">Email Address <span class="required">*</span></label>
+            <label for="email"
+              >Email Address <span class="required">*</span></label
+            >
             <input
               type="email"
               id="email"
@@ -510,7 +501,9 @@
             />
           </div>
           <div class="form-group">
-            <label for="timezone">Time Zone <span class="required">*</span></label>
+            <label for="timezone"
+              >Time Zone <span class="required">*</span></label
+            >
             <select id="timezone" name="timezone" required>
               <option value="">Select Your Time Zone</option>
               <option value="EST">Eastern Time (EST)</option>
@@ -526,7 +519,9 @@
         <!-- Pet Information -->
         <div class="form-row">
           <div class="form-group">
-            <label for="pet-name">Pet's Name <span class="required">*</span></label>
+            <label for="pet-name"
+              >Pet's Name <span class="required">*</span></label
+            >
             <input
               type="text"
               id="pet-name"
@@ -536,20 +531,26 @@
             />
           </div>
           <div class="form-group">
-            <label for="pet-type">Pet Type <span class="required">*</span></label>
+            <label for="pet-type"
+              >Pet Type <span class="required">*</span></label
+            >
             <select id="pet-type" name="pet-type" required>
               <option value="">Select Pet Type</option>
               <option value="dog">Dog</option>
               <option value="cat">Cat</option>
               <option value="fish">Fish</option>
               <option value="bird">Bird</option>
-              <option value="small-animal">Small Animal (Rabbit, Guinea Pig, etc.)</option>
+              <option value="small-animal">
+                Small Animal (Rabbit, Guinea Pig, etc.)
+              </option>
               <option value="reptile">Reptile</option>
               <option value="other">Other</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="pet-age">Pet's Age <span class="required">*</span></label>
+            <label for="pet-age"
+              >Pet's Age <span class="required">*</span></label
+            >
             <input
               type="text"
               id="pet-age"
@@ -565,7 +566,11 @@
         </button>
 
         <p class="form-note">
-          <strong>Note:</strong> This form is for demonstration purposes as part of a desktop prototype. In a production environment, form submission would be processed by server-side functionality. We will contact you within <strong>48 hours</strong> to confirm your consultation appointment.
+          <strong>Note:</strong> This form is for demonstration purposes as part
+          of a desktop prototype. In a production environment, form submission
+          would be processed by server-side functionality. We will contact you
+          within <strong>48 hours</strong> to confirm your consultation
+          appointment.
         </p>
       </form>
     </section>
@@ -578,35 +583,100 @@
           <ul>
             <li>📧 info@paradigmpetprofessionals.com</li>
             <li>📞 (555) 123-4567</li>
-            <li>📍 123 Pet Care Lane, Anytown, USA</li>
+            <li>📍 123 Pet Care Lane, Rescue Bound, NY, USA</li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dogs.html">Dog Care</a></li>
-            <li><a href="cats.html">Cat Care</a></li>
-            <li><a href="fish.html">Fish Care</a></li>
-            <li><a href="consultation.html">Schedule Consultation</a></li>
+            <li>
+              <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="dogs.html">
+                <i class="fa-solid fa-dog"></i>
+                Dog Care
+              </a>
+            </li>
+            <li>
+              <a href="cats.html">
+                <i class="fa-solid fa-cat"></i>
+                Cat Care
+              </a>
+            </li>
+            <li>
+              <a href="fish.html">
+                <i class="fa-solid fa-fish"></i>
+                Fish Care
+              </a>
+            </li>
+            <li>
+              <a href="consultation.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                Schedule Consultation
+              </a>
+            </li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Resources</h3>
           <ul>
-            <li><a href="#">Pet Adoption</a></li>
-            <li><a href="#">FAQs</a></li>
-            <li><a href="#">Accessibility</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-heart"></i>
+                Pet Adoption
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-circle-question"></i>
+                FAQs
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-universal-access"></i>
+                Accessibility
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-user-shield"></i>
+                Privacy Policy
+              </a>
+            </li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Connect With Us</h3>
           <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">LinkedIn</a></li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-x-twitter"></i>
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+                LinkedIn
+              </a>
+            </li>
           </ul>
         </div>
       </div>

@@ -89,7 +89,7 @@
       }
 
       nav a:hover {
-        color: #FDB515;
+        color: #fdb515;
       }
 
       nav .search-container {
@@ -111,9 +111,9 @@
       }
 
       nav .search-button:hover {
-        background-color: #FDB515;
+        background-color: #fdb515;
         color: #003b6d;
-        border-color: #FDB515;
+        border-color: #fdb515;
       }
 
       nav .search-input {
@@ -128,28 +128,9 @@
 
       nav .search-input:focus {
         outline: none;
-        border-color: #FDB515;
+        border-color: #fdb515;
         background-color: white;
         width: 250px;
-      }
-
-      /* Breadcrumb */
-      .breadcrumb {
-        max-width: 1200px;
-        margin: 2rem auto 0;
-        padding: 0 2rem;
-        color: #666;
-        font-size: 0.9rem;
-      }
-
-      .breadcrumb a {
-        color: #FDB515;
-        text-decoration: none;
-        transition: color 0.3s;
-      }
-
-      .breadcrumb a:hover {
-        color: #003b6d;
       }
 
       /* Hero Section */
@@ -166,7 +147,7 @@
 
       .hero-icon {
         font-size: 6rem;
-        color: #FDB515;
+        color: #fdb515;
         margin-bottom: 1rem;
       }
 
@@ -199,7 +180,7 @@
         font-size: 1.8rem;
         margin-bottom: 2rem;
         padding-bottom: 0.5rem;
-        border-bottom: 3px solid #FDB515;
+        border-bottom: 3px solid #fdb515;
       }
 
       .faq-item {
@@ -227,7 +208,7 @@
       }
 
       .faq-question i {
-        color: #FDB515;
+        color: #fdb515;
         font-size: 1rem;
         margin-top: 0.25rem;
       }
@@ -240,25 +221,27 @@
       }
 
       /* CTA Box */
-      .cta-box {
-        background: linear-gradient(135deg, #003b6d 0%, #FDB515 100%);
+      .consult-cta-box {
+        background: linear-gradient(210deg, #fdb515 80%, #003b6d 80%);
         color: white;
-        padding: 3rem;
+        padding: 2.5rem;
         border-radius: 15px;
         text-align: center;
-        margin: 4rem auto;
+        margin: 3rem auto;
         max-width: 900px;
       }
 
-      .cta-box h2 {
-        font-size: 2rem;
+      .consult-cta-box h3 {
+        color: #003b6d;
+        font-size: 1.8rem;
         margin-bottom: 1rem;
         font-weight: 700;
       }
 
-      .cta-box p {
-        font-size: 1.1rem;
-        margin-bottom: 2rem;
+      .consult-cta-box p {
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
         opacity: 0.95;
       }
 
@@ -278,7 +261,7 @@
       .cta-button:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
-        background-color: #FDB515;
+        background-color: #fff8e6;
       }
 
       /* Footer */
@@ -320,11 +303,11 @@
       }
 
       .footer-section a:hover {
-        color: #FDB515;
+        color: #fdb515;
       }
 
       .footer-section ul li i {
-        color: #FDB515;
+        color: #fdb515;
         margin-right: 0.5rem;
       }
 
@@ -376,7 +359,10 @@
       <div class="header-container">
         <a href="index.html" class="logo">
           <div class="logo-icon">
-            <img src="img/logo-icon.png" alt="Paradigm Pet Professionals Logo" />
+            <img
+              src="img/logo-icon.png"
+              alt="Paradigm Pet Professionals Logo"
+            />
           </div>
           <span>Paradigm Pet Professionals</span>
         </a>
@@ -385,19 +371,20 @@
           <a href="dogs.html">Dogs</a>
           <a href="cats.html">Cats</a>
           <a href="fish.html">Fish</a>
+          <a href="about-us.html">About</a>
           <div class="search-container">
             <button class="search-button">Fetch</button>
-            <input type="text" class="search-input" placeholder="Find something..." />
+            <input
+              type="text"
+              class="search-input"
+              placeholder="Find something..."
+            />
           </div>
         </nav>
       </div>
     </header>
 
     <!-- Breadcrumb -->
-    <div class="breadcrumb">
-      <a href="index.html">Home</a> > <span>FAQs</span>
-    </div>
-
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-content">
@@ -406,7 +393,8 @@
         </div>
         <h1>Frequently Asked Questions</h1>
         <p>
-          Find answers to common questions about our services, pet care advice, and consultation process.
+          Find answers to common questions about our services, pet care advice,
+          and consultation process.
         </p>
       </div>
     </section>
@@ -423,7 +411,11 @@
             <span>What is Paradigm Pet Professionals?</span>
           </div>
           <div class="faq-answer">
-            Paradigm Pet Professionals is an evidence-based pet care advisory service with over 12 years of experience. Our certified "Pexperts" provide one-on-one consultations and group presentations for pet owners and professionals, offering tailored advice based on scientific research and best practices.
+            Paradigm Pet Professionals is an evidence-based pet care advisory
+            service with over 12 years of experience. Our certified "Pexperts"
+            provide one-on-one consultations and group presentations for pet
+            owners and professionals, offering tailored advice based on
+            scientific research and best practices.
           </div>
         </div>
 
@@ -433,7 +425,10 @@
             <span>What types of pets do you provide care advice for?</span>
           </div>
           <div class="faq-answer">
-            We offer comprehensive care guidance for dogs, cats, fish, birds, and small animals. Our experts are knowledgeable about various species and can provide tailored recommendations based on your pet's specific needs, breed, age, and health conditions.
+            We offer comprehensive care guidance for dogs, cats, fish, birds,
+            and small animals. Our experts are knowledgeable about various
+            species and can provide tailored recommendations based on your pet's
+            specific needs, breed, age, and health conditions.
           </div>
         </div>
 
@@ -443,7 +438,10 @@
             <span>Are your "Pexperts" certified professionals?</span>
           </div>
           <div class="faq-answer">
-            Yes! All our pet experts hold certifications in pet health and nutrition, and have extensive experience working with pet owners and veterinary professionals. They stay current with the latest research in animal care and behavior.
+            Yes! All our pet experts hold certifications in pet health and
+            nutrition, and have extensive experience working with pet owners and
+            veterinary professionals. They stay current with the latest research
+            in animal care and behavior.
           </div>
         </div>
       </div>
@@ -458,7 +456,10 @@
             <span>How do I schedule a consultation?</span>
           </div>
           <div class="faq-answer">
-            Simply fill out our consultation request form with your contact information and pet details. We'll respond within 48 hours to schedule your appointment. You can choose between virtual consultations or phone consultations based on your preference.
+            Simply fill out our consultation request form with your contact
+            information and pet details. We'll respond within 48 hours to
+            schedule your appointment. You can choose between virtual
+            consultations or phone consultations based on your preference.
           </div>
         </div>
 
@@ -468,7 +469,10 @@
             <span>How long does a typical consultation last?</span>
           </div>
           <div class="faq-answer">
-            One-on-one consultations typically last 45-60 minutes, giving us enough time to thoroughly discuss your pet's needs and answer all your questions. Follow-up consultations may be shorter, usually 30 minutes.
+            One-on-one consultations typically last 45-60 minutes, giving us
+            enough time to thoroughly discuss your pet's needs and answer all
+            your questions. Follow-up consultations may be shorter, usually 30
+            minutes.
           </div>
         </div>
 
@@ -478,7 +482,10 @@
             <span>Do you offer virtual consultations?</span>
           </div>
           <div class="faq-answer">
-            Yes! We offer state-of-the-art virtual consultations via video call, making it convenient for you to receive expert pet care advice from the comfort of your home. Virtual consultations are just as comprehensive as in-person meetings.
+            Yes! We offer state-of-the-art virtual consultations via video call,
+            making it convenient for you to receive expert pet care advice from
+            the comfort of your home. Virtual consultations are just as
+            comprehensive as in-person meetings.
           </div>
         </div>
 
@@ -488,7 +495,10 @@
             <span>What should I prepare for my consultation?</span>
           </div>
           <div class="faq-answer">
-            Please have information about your pet's age, breed, current diet, any health concerns, and a list of questions you'd like to discuss. If you have recent veterinary records or test results, having those available can be helpful as well.
+            Please have information about your pet's age, breed, current diet,
+            any health concerns, and a list of questions you'd like to discuss.
+            If you have recent veterinary records or test results, having those
+            available can be helpful as well.
           </div>
         </div>
       </div>
@@ -503,7 +513,10 @@
             <span>Is your advice evidence-based?</span>
           </div>
           <div class="faq-answer">
-            Absolutely! All our recommendations are based on peer-reviewed scientific research, veterinary best practices, and current nutritional guidelines. We prioritize evidence-based care to ensure the health and wellness of your pet.
+            Absolutely! All our recommendations are based on peer-reviewed
+            scientific research, veterinary best practices, and current
+            nutritional guidelines. We prioritize evidence-based care to ensure
+            the health and wellness of your pet.
           </div>
         </div>
 
@@ -513,7 +526,10 @@
             <span>Can you help me choose the right pet for my family?</span>
           </div>
           <div class="faq-answer">
-            Yes! We offer consultations for prospective pet owners to help you determine which type of pet best suits your family's lifestyle, living situation, and preferences. We'll guide you through factors like activity level, space requirements, and care commitment.
+            Yes! We offer consultations for prospective pet owners to help you
+            determine which type of pet best suits your family's lifestyle,
+            living situation, and preferences. We'll guide you through factors
+            like activity level, space requirements, and care commitment.
           </div>
         </div>
 
@@ -523,7 +539,10 @@
             <span>Do you help with pet adoption?</span>
           </div>
           <div class="faq-answer">
-            We're happy to help you navigate the adoption process! We can guide you through each step from determining which pet is right for you, to connecting you with adoption resources, to completing paperwork and bringing your new companion home.
+            We're happy to help you navigate the adoption process! We can guide
+            you through each step from determining which pet is right for you,
+            to connecting you with adoption resources, to completing paperwork
+            and bringing your new companion home.
           </div>
         </div>
 
@@ -533,7 +552,41 @@
             <span>Can you provide emergency medical advice?</span>
           </div>
           <div class="faq-answer">
-            While we provide expert pet care advice, we are not a replacement for veterinary medical care. In case of a medical emergency, please contact your veterinarian or emergency animal hospital immediately. Our consultations focus on preventive care, nutrition, and general wellness.
+            While we provide expert pet care advice, we are not a replacement
+            for veterinary medical care. In case of a medical emergency, please
+            contact your veterinarian or emergency animal hospital immediately.
+            Our consultations focus on preventive care, nutrition, and general
+            wellness.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>What is the best way to rid my dog or cat of fleas?</span>
+          </div>
+          <div class="faq-answer">
+            Sometimes our furry friends pick up hitchhikers that make them very itchy and uncomfortable. If gone unchecked, fleas can infest your home, making it even more difficult to rid them from your loved one's coat. To eliminate fleas, choose a shampoo specially formulated to kill fleas and be sure to read and follow all instructions on the label. Repeat treatment as necessary until your pet is free of fleas; if you see skin irritation, stop use immediately and contact your local vet.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>How long can I expect my pet bird to live?</span>
+          </div>
+          <div class="faq-answer">
+            The answer can vary widely depending on the type of bird, the size, the environment, and of course, mother nature. Assuming all is well in the external factors that are out of the owner's control, cockatiels and budgies live up to 20 years old on average. However, many parrot variations are known to live nearly an astounding 100 years! As with many living organisms, longevity can be increased by keeping annual veterinarian visits, maintaining a healthy diet, and keeping your feathery friend's environment sanitary.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <i class="fa-solid fa-circle-check"></i>
+            <span>How often should I feed my pet snake?</span>
+          </div>
+          <div class="faq-answer">
+            Most snakes eat one to two times per week, depending on their age, size, and activity level. Female snakes often increase their food intake as breeding season gets underway. Some snakes can go as long as two weeks before needing their next meal; this is normal. However, if your snake has not eaten in two or three weeks and seems lethargic, reach out to your local vet to determine if your snake might be ill or injured.
           </div>
         </div>
       </div>
@@ -548,7 +601,9 @@
             <span>What is your cancellation policy?</span>
           </div>
           <div class="faq-answer">
-            We request at least 24 hours notice for cancellations or rescheduling. This allows us to offer the time slot to other pet owners who may need our services.
+            We request at least 24 hours notice for cancellations or
+            rescheduling. This allows us to offer the time slot to other pet
+            owners who may need our services.
           </div>
         </div>
 
@@ -558,21 +613,23 @@
             <span>Do you offer group presentations for professionals?</span>
           </div>
           <div class="faq-answer">
-            Yes! We provide group presentations designed for veterinary professionals, pet shelter staff, and pet breeding professionals. These presentations can be customized to address specific topics and concerns relevant to your organization.
+            Yes! We provide group presentations designed for veterinary
+            professionals, pet shelter staff, and pet breeding professionals.
+            These presentations can be customized to address specific topics and
+            concerns relevant to your organization.
           </div>
         </div>
       </div>
     </div>
 
     <!-- CTA Box -->
-    <div class="cta-box">
-      <h2>Still Have Questions?</h2>
+    <div class="consult-cta-box">
+      <h3>Still Have Questions?</h3>
       <p>
-        Our "Pexperts" are here to help! Schedule a consultation and get personalized answers to all your pet care questions.
+        Our "Pexperts" are here to help! Schedule a consultation and get
+        personalized answers to all your pet care questions.
       </p>
-      <a href="consultation.html" class="cta-button">
-        <i class="fa-solid fa-calendar-check"></i> Schedule Consultation
-      </a>
+      <a href="consultation.html" class="cta-button">Schedule Consultation</a>
     </div>
 
     <!-- Footer -->
@@ -583,35 +640,100 @@
           <ul>
             <li>=� info@paradigmpetprofessionals.com</li>
             <li>=� (555) 123-4567</li>
-            <li>=� 123 Pet Care Lane, Anytown, USA</li>
+            <li>=� 123 Pet Care Lane, Rescue Bound, NY, USA</li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Quick Links</h3>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="dogs.html">Dog Care</a></li>
-            <li><a href="cats.html">Cat Care</a></li>
-            <li><a href="fish.html">Fish Care</a></li>
-            <li><a href="consultation.html">Schedule Consultation</a></li>
+            <li>
+              <a href="index.html">
+                <i class="fa-solid fa-house"></i>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="dogs.html">
+                <i class="fa-solid fa-dog"></i>
+                Dog Care
+              </a>
+            </li>
+            <li>
+              <a href="cats.html">
+                <i class="fa-solid fa-cat"></i>
+                Cat Care
+              </a>
+            </li>
+            <li>
+              <a href="fish.html">
+                <i class="fa-solid fa-fish"></i>
+                Fish Care
+              </a>
+            </li>
+            <li>
+              <a href="consultation.html">
+                <i class="fa-solid fa-calendar-check"></i>
+                Schedule Consultation
+              </a>
+            </li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Resources</h3>
           <ul>
-            <li><a href="#">Pet Adoption</a></li>
-            <li><a href="faqs.html">FAQs</a></li>
-            <li><a href="#">Accessibility</a></li>
-            <li><a href="#">Privacy Policy</a></li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-heart"></i>
+                Pet Adoption
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-circle-question"></i>
+                FAQs
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-universal-access"></i>
+                Accessibility
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-solid fa-user-shield"></i>
+                Privacy Policy
+              </a>
+            </li>
           </ul>
         </div>
         <div class="footer-section">
           <h3>Connect With Us</h3>
           <ul>
-            <li><a href="#">Facebook</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">LinkedIn</a></li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-facebook-f"></i>
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-instagram"></i>
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-x-twitter"></i>
+                Twitter
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <i class="fa-brands fa-linkedin-in"></i>
+                LinkedIn
+              </a>
+            </li>
           </ul>
         </div>
       </div>

@@ -1,0 +1,11 @@
+# iCloud temporary and sync files
+.!*
+*.icloud
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
